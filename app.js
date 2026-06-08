@@ -1,4 +1,4 @@
-﻿// FlashCards 4U v64 app logic
+﻿// LexiFlow AI v65 app logic
 // vocab loaded externally
 var LC={A1:"#00d084",A2:"#00c9c9",B1:"#4d9fff",B2:"#b87fff",C1:"#ff8c00",C2:"#ff3b5c",GR:"#9b59b6",PRV:"#e67e22",AWL:"#27ae60",MED:"#e74c3c",BIZ:"#2980b9",TECH:"#8e44ad",HOM:"#e91e8c",BOD:"#00bcd4",FOD:"#8bc34a",NAT:"#4caf50",TRN:"#ff9800",HLT:"#f44336",EMO:"#9c27b0",CLO:"#ff5722",EDU:"#3f51b5",VRB:"#009688",ADJ:"#673ab7",ADV:"#607d8b",SPT:"#ff6b35",SCI:"#5c6bc0",ART:"#ab47bc",ENV:"#26a69a",WRK:"#42a5f5",TRV:"#26c6da",DIG:"#7e57c2",WEA:"#66bb6a",FPR:"#ef5350",LAW:"#8d6e63",PSY:"#ff7043",COL:"#00897b",PV:"#1e88e5",IDM:"#e53935"};
 var LE={A1:"🌱",A2:"🌿",B1:"🌳",B2:"🦅",C1:"🔥",C2:"🏆",GR:"📝",PRV:"💬",AWL:"🎓",MED:"🏥",BIZ:"💼",TECH:"💻",HOM:"🏠",BOD:"🫀",FOD:"🍎",NAT:"🌍",TRN:"🚗",HLT:"💊",EMO:"❤️",CLO:"👕",EDU:"📚",VRB:"⚡",ADJ:"🎨",ADV:"💨",SPT:"⚽",SCI:"🔬",ART:"🎭",ENV:"🌿",WRK:"💼",TRV:"✈️",DIG:"📱",WEA:"☀️",FPR:"🍳",LAW:"⚖️",PSY:"🧠",COL:"🔗",PV:"🔀",IDM:"💡"};
@@ -15,7 +15,7 @@ var QUOTES=[
   "🌍 <b>زبان انگلیسی</b> زبان ۱.۵ میلیارد نفر است — سرمایه‌گذاری در آن همیشه ارزشمند است.",
   "✨ <b>مغز انسان</b> در حین خواب کارت‌ها جدید را تثبیت می‌کند — شب مطالعه کن، صبح بهتر به یاد خواهی داشت.",
   "🎯 <b>فقط صادقانه ارزیابی کن</b> — هوش مصنوعی این اپ بهترین زمان مرور را برایت تعیین می‌کند.",
-  "⚡ <b>FlashCards 4U</b> از الگوریتم SM-2 استفاده می‌کند — همان روشی که Anki از آن بهره می‌برد.",
+  "⚡ <b>LexiFlow AI</b> از الگوریتم SM-2 استفاده می‌کند — همان روشی که Anki از آن بهره می‌برد.",
   "🏆 <b>زبان‌آموزان موفق</b> یک ویژگی مشترک دارند: هر روز، حتی ۵ دقیقه، مطالعه می‌کنند.",
   "💡 <b>تحقیقات نشان می‌دهد</b> یادگیری کارت در قالب مثال و جمله، ماندگاری آن را ۴ برابر افزایش می‌دهد.",
   "📖 <b>Nelson Mandela</b> گفت: اگر با زبانی که می‌فهمد با کسی صحبت کنی، به ذهنش می‌رسد. اگر به زبان خودش صحبت کنی، به قلبش.",
@@ -42,7 +42,7 @@ var BADGES=[
   {id:"b10",ico:"⭐",lbl:"۵۰۰ XP",ok:function(g,p){return g.totalXP>=500;}},
   {id:"b11",ico:"👑",lbl:"۱۰۰۰ XP",ok:function(g,p){return g.totalXP>=1000;}},
 ];
-var AVS=["🧑","👩","👨","👧","👦","👩‍🎓","👨‍🎓","👩‍💻","👨‍💻","👨‍🏫"];
+var AVS=["🚀","🧠","🎧","💎","⚡","🌍","🎓","🧑‍💻","📚","🏆"];
 
 // STATE
 var users={},uid=null,sq=[],cur=null,flipped=false;
@@ -1409,8 +1409,8 @@ function resetUser(){if(!gu())return;if(!confirm("پیشرفت "+gu().name+" پ�
 
 function exportProfile(){
   var backup={
-    app:"FlashCards 4U",
-    version:61,
+    app:"LexiFlow AI",
+    version:65,
     exportedAt:new Date().toISOString(),
     uid:uid,
     users:users,
@@ -1423,7 +1423,7 @@ function exportProfile(){
   var url=URL.createObjectURL(blob);
   var a=document.createElement("a");
   a.href=url;
-  a.download="flashcards4u_profile_v64_"+new Date().toISOString().slice(0,10)+".json";
+  a.download="lexiflow_profile_v65_"+new Date().toISOString().slice(0,10)+".json";
   a.click();
   URL.revokeObjectURL(url);
   toast("بکاپ کامل پروفایل ساخته شد ✅");
@@ -1464,7 +1464,7 @@ document.getElementById("card").addEventListener("touchend",function(e){var c=do
 function registerServiceWorker(){
   if(!("serviceWorker" in navigator)) return;
   navigator.serviceWorker.register("sw.js").catch(function(err){
-    console.warn("FlashCards 4U service worker registration failed:", err);
+    console.warn("LexiFlow AI service worker registration failed:", err);
   });
 }
 window.addEventListener("load",function(){init();registerServiceWorker();});
@@ -1540,7 +1540,7 @@ function showAdminPanel(){
     "z-index:99999;overflow-y:auto;padding:20px;font-family:monospace;color:#fff;direction:ltr";
   
   var title=document.createElement("h2");
-  title.textContent="FlashCards 4U — Admin Panel";
+  title.textContent="LexiFlow AI — Admin Panel";
   title.style.cssText="color:#00d084;margin-bottom:16px;font-size:18px";
   panel.appendChild(title);
   
@@ -1968,4 +1968,5 @@ function initMycards(){
   mcTab("list");
   renderMyCards();
 }
+
 

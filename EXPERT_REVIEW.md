@@ -1,26 +1,48 @@
-# FlashCards 4U v64 - AI Expert Board
+# LexiFlow AI v65 - Product Redesign Review
 
-This release applies the app review from three product roles:
+This release is a full product-design pass over the learning app. The "specialists" are design perspectives applied by ChatGPT/Codex, not real people with claimed degrees or employment history.
 
-## Graphic Design
+## 1. Graphic Design Review
 
-- Replaced the generic text mark with a dedicated app logo.
-- Kept the top bar compact and recognizable on mobile.
-- Improved card contrast, example readability, and visual hierarchy.
-- Kept level colors as functional signals instead of pure decoration.
+- Rebranded the app from a generic flashcard name to `LexiFlow AI` so the new version can be compared clearly with the old one.
+- Kept the user-provided Aa card logo, but promoted it into the navigation, login, manifest, and PWA identity.
+- Reworked the visual language around a 2026-style mobile product feel: glass surfaces, sharper hierarchy, cyan/violet/mint accents, stronger CTA buttons, and less flat dark-blue repetition.
+- Improved perceived polish on login, home, dashboard cards, expert board, buttons, and navigation.
+- Kept CEFR and topic colors as functional learning signals rather than random decoration.
 
-## Marketing
+## 2. Marketing Review
 
-- Clarified the core promise: smart English flashcards with CEFR levels, SRS review, quizzes, pronunciation, and topic categories.
-- Added a visible expert-board section in the app so users can understand the design logic.
-- Preserved fast-start actions on the home screen: study, level, quiz, library, stats, and settings.
+- Clarified the main promise: a daily AI-style English vocabulary coach with 20,466 cards, CEFR levels, SRS review, quizzes, pronunciation, and progress stats.
+- Added a stronger home hero that explains the product in one glance before the user starts studying.
+- Kept fast actions visible: study, level, quiz, card list, stats, settings, and redesign report.
+- Positioned the app as a serious learning tool rather than only a card viewer.
 
-## UI/UX Design
+## 3. UI/UX Review
 
-- Applied mobile-first layout fixes for the top bar, study card, settings screen, and bottom navigation.
-- Separated readable text scaling from compact UI scaling so accessibility does not break layout.
-- Made Study resilient: opening the Study tab now builds a real queue instead of showing placeholder content.
-- Improved PWA cache versioning and offline asset coverage.
+- Home now behaves more like a learning cockpit: user identity, progress, motivation, feature explanation, and clear actions.
+- Mobile-first spacing and card shapes were updated so the app feels usable on small phones.
+- The top menu keeps logo/name/settings compact and recognizable.
+- The bottom navigation keeps the main workflows one tap away.
+- Help text remains available on symbolic stats such as streak and XP.
+- Text scaling and Persian readability remain central because the app is used on mobile by learners with different vision needs.
+
+## 4. Technical Review
+
+- Updated PWA metadata and service-worker cache version so GitHub Pages can pick up the new release.
+- Preserved the large vocabulary database format and the existing quiz/study architecture.
+- Kept the v63/v64 fixes for study queue, quiz entry points, mobile back behavior, settings layout, and app logo.
+- Avoided fake AI credentials in UI and docs; the app explains that the expert board is a product-design framing.
+
+## Page-by-page Pass
+
+- Login: modernized brand, subtitle, logo presentation, CTA styling, and avatar set.
+- Home: added hero, clearer product promise, redesigned expert-board copy, and stronger quick-action structure.
+- Study: preserved card readability and mobile-safe navigation from the prior fix.
+- Quiz: preserved the fixed quiz launch paths and checkbox-style quiz icon.
+- Stats: retained explainable XP/streak help behavior for symbolic metrics.
+- Settings: retained responsive settings and text-scale support for Persian/English readability.
+- Levels and categories: retained CEFR/topic taxonomy and direct quiz buttons for each group.
+- My Cards: retained personal cards and personal-card quiz flow.
 
 ## Methods Used
 
@@ -30,5 +52,3 @@ This release applies the app review from three product roles:
 - Accessible text scaling
 - Progressive Web App cache versioning
 - Clear visual hierarchy for repeated learning sessions
-
-Note: The app does not claim that an AI has a real degree or real-world employment history. The "AI Expert Board" is a product-design framing that applies established principles from graphic design, marketing, UI/UX, learning science, and mobile PWA practice.

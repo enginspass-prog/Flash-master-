@@ -1,4 +1,4 @@
-const CACHE_NAME = "flashcards-4u-v64";
+const CACHE_NAME = "lexiflow-ai-v65";
 const CORE_ASSETS = [
   "./",
   "./index.html",
