@@ -1,10 +1,10 @@
-# LexiFlow AI v66 - Product Redesign Review
+﻿# FlashCards 4U v67 - Product Redesign Review
 
 This release is a full product-design pass over the learning app. The "specialists" are design perspectives applied by ChatGPT/Codex, not real people with claimed degrees or employment history.
 
 ## 1. Graphic Design Review
 
-- Rebranded the app from a generic flashcard name to `LexiFlow AI` so the new version can be compared clearly with the old one.
+- Restored the original `FlashCards 4U` name after the user rejected the temporary LexiFlow naming direction.
 - Kept the user-provided Aa card logo, but promoted it into the navigation, login, manifest, and PWA identity.
 - Reworked the visual language around a 2026-style mobile product feel: glass surfaces, sharper hierarchy, cyan/violet/mint accents, stronger CTA buttons, and less flat dark-blue repetition.
 - Improved perceived polish on login, home, dashboard cards, expert board, buttons, and navigation.
@@ -43,7 +43,7 @@ This release is a full product-design pass over the learning app. The "specialis
 - Study: preserved card readability and mobile-safe navigation from the prior fix.
 - Quiz: preserved the fixed quiz launch paths and checkbox-style quiz icon.
 - Stats: retained explainable XP/streak help behavior for symbolic metrics.
-- Settings: retained responsive settings, text-scale support for Persian/English readability, and added Voice Studio for pronunciation testing.
+- Settings: retained responsive settings, text-scale support for Persian/English readability, added Voice Studio for pronunciation testing, and added a real voice selector based on the browser or phone voices.
 - Levels and categories: retained CEFR/topic taxonomy and direct quiz buttons for each group.
 - My Cards: retained personal cards and personal-card quiz flow.
 
@@ -55,3 +55,4 @@ This release is a full product-design pass over the learning app. The "specialis
 - Accessible text scaling
 - Progressive Web App cache versioning
 - Clear visual hierarchy for repeated learning sessions
+

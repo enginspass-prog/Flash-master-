@@ -1,4 +1,4 @@
-const CACHE_NAME = "lexiflow-ai-v66";
+﻿const CACHE_NAME = "flashcards-4u-v67";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -43,3 +43,4 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+

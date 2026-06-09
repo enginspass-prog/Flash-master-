@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#050814">
 <meta name="screen-orientation" content="any">
-<title>LexiFlow AI v66</title>
+<title>FlashCards 4U v67</title>
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
@@ -15,14 +15,19 @@
 <div id="app">
   <div id="nav">
     <button class="nav-home" id="nav-home" type="button" title="خانه">
-      <img class="nav-logo" src="app-logo.jpg" alt="LexiFlow AI">
-      <span class="nav-ttl">LexiFlow AI</span>
+      <img class="nav-logo" src="app-logo.jpg" alt="FlashCards 4U">
+      <span class="nav-ttl">FlashCards 4U</span>
     </button>
     <div class="nav-r">
       <div id="sp-pill" data-help-title="روزهای پیوسته" data-help-body="این عدد نشان می‌دهد چند روز پشت سر هم مطالعه داشته‌ای. هر روز که کارت مرور کنی، زنجیره‌ات حفظ می‌شود.">🔥<span id="snav">0</span></div>
       <div id="xp-pill" data-help-title="امتیاز تجربه" data-help-body="ستاره‌ها امتیاز فعالیت تو هستند. با مطالعه و آزمون بیشتر می‌شوند و پیشرفت کلی را نشان می‌دهند.">⭐<span id="xnav">0</span></div>
       <button id="lvlbtn" data-help-title="سطح فعلی" data-help-body="اینجا سطح یا دسته‌ای را که الان مطالعه می‌کنی می‌بینی. با لمس آن می‌توانی سطح یا موضوع را عوض کنی.">A1▾</button>
-      <button id="settings-quick-btn" class="icon-btn" title="تنظیمات" type="button">⚙</button>
+      <button id="settings-quick-btn" class="icon-btn settings-icon" title="تنظیمات" aria-label="تنظیمات" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+          <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.05.05a2 2 0 0 1-2.83 2.83l-.05-.05a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21a2 2 0 0 1-4 0v-.07a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.05.05a2 2 0 0 1-2.83-2.83l.05-.05A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3a2 2 0 0 1 0-4h.07A1.7 1.7 0 0 0 4.6 8.94a1.7 1.7 0 0 0-.34-1.88l-.05-.05a2 2 0 0 1 2.83-2.83l.05.05a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.01V3a2 2 0 0 1 4 0v.01a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.05-.05a2 2 0 0 1 2.83 2.83l-.05.05a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.56 1.03H21a2 2 0 0 1 0 4h-.04A1.7 1.7 0 0 0 19.4 15Z"/>
+        </svg>
+      </button>
     </div>
   </div>
   <div id="screens">
@@ -30,8 +35,8 @@
     <!-- LOGIN -->
     <div id="login" class="scr on">
       <div class="lbox">
-        <div class="l-logo"><img class="app-logo-img" src="app-logo.jpg" alt="LexiFlow AI"></div>
-        <div class="l-ttl">LexiFlow AI <span style="font-size:11px;color:var(--gd)">v66</span></div>
+        <div class="l-logo"><img class="app-logo-img" src="app-logo.jpg" alt="FlashCards 4U"></div>
+        <div class="l-ttl">FlashCards 4U <span style="font-size:11px;color:var(--gd)">v67</span></div>
         <div class="l-sub">مربی هوشمند لغات انگلیسی با SRS، آزمون، تلفظ و مسیر روزانه</div>
         <div id="ulsec" style="display:none">
           <div id="ul" class="ul"></div>
@@ -62,7 +67,7 @@
       </div>
       <div class="hero26">
         <div class="hero-kicker">AI Vocabulary Coach · 2026 Edition</div>
-        <div class="hero-title">LexiFlow AI</div>
+        <div class="hero-title">FlashCards 4U</div>
         <div class="hero-copy">هر روز یک مسیر کوتاه و دقیق: کارت‌های CEFR، مرور هوشمند، آزمون، تلفظ و آمار پیشرفت در یک تجربه موبایل‌فرست.</div>
         <div class="hero-metrics">
           <span>20,466 کارت</span><span>A1 تا C2</span><span>SRS</span>
@@ -81,7 +86,7 @@
       </div>
       <div class="wgreet" id="wgreet">سلام! آماده یادگیری هستی؟</div>
       <div class="card2">
-        <div class="c2t">⚡ چرا LexiFlow؟</div>
+        <div class="c2t">⚡ چرا FlashCards؟</div>
         <div class="c2r"><span style="font-size:14px">🧠</span><span>مغز با <b>تکرار هوشمند</b> بهتر یاد می‌گیره — هر کارت دقیقاً وقتی داری فراموشش می‌کنی نشون داده می‌شه.</span></div>
         <div class="c2r"><span style="font-size:14px">📈</span><span>این روش تا <b>۳ برابر سریع‌تر</b> از روش‌های سنتی کار می‌کنه.</span></div>
         <div class="c2r"><span style="font-size:14px">🎯</span><span>کارت‌ها + اصطلاحات + Collocation + گرامر + ضرب‌المثل — همه در یک جا.</span></div>
@@ -107,11 +112,11 @@
       </div>
       <div class="card2 expert-board">
         <div class="c2t">🧭 بازنویسی با نگاه متخصصان محصول</div>
-        <div class="expert-lead">در v66 هر صفحه مثل یک محصول واقعی بررسی شد: اول پیام برند و اعتماد، بعد مسیر یادگیری، بعد دسترسی سریع، آموزش اولیه و خوانایی موبایل.</div>
+        <div class="expert-lead">در v67 تمرکز روی برگشت نام اصلی، اصلاح آیکون‌ها، جای درست تنظیمات و انتخاب گوینده برای تلفظ بود.</div>
         <div class="expert-grid">
           <div class="expert-card">
             <div class="expert-role">🎨 گرافیک</div>
-            <div class="expert-note">هویت تازه LexiFlow، کارت‌های شیشه‌ای، رنگ‌های چندلهجه‌ای، کنتراست بهتر و فاصله‌های امن برای صفحه‌های کوچک.</div>
+            <div class="expert-note">هویت تازه FlashCards، کارت‌های شیشه‌ای، رنگ‌های چندلهجه‌ای، کنتراست بهتر و فاصله‌های امن برای صفحه‌های کوچک.</div>
           </div>
           <div class="expert-card">
             <div class="expert-role">📣 مارکت</div>
@@ -135,7 +140,7 @@
         <button id="dash-words-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--gr);background:rgba(0,208,132,.08);color:var(--gr);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📋 لیست کارت‌ها</button>
         <button id="dash-stats-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--or);background:rgba(255,140,0,.08);color:var(--or);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📊 آمار</button>
         <button id="dash-settings-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--t3);background:rgba(255,255,255,.04);color:var(--t2);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">⚙️ تنظیمات</button>
-        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v66</button>
+        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v67</button>
       </div>
     </div>
 
@@ -573,6 +578,12 @@
           </div>
         </div>
         <div class="cfgr">
+          <div class="cfgl"><div class="cfgt">گوینده</div><div class="cfgd">صدای نصب‌شده روی گوشی یا مرورگر</div></div>
+          <select id="voice-select" class="voice-select">
+            <option value="">انتخاب خودکار</option>
+          </select>
+        </div>
+        <div class="cfgr">
           <div class="cfgl"><div class="cfgt">سرعت تلفظ</div></div>
           <div class="seg" id="seg-rate">
             <button class="sgo" data-v="slow">کند</button>
@@ -786,10 +797,10 @@
 <div id="onboard" class="onboard" aria-hidden="true">
   <div class="onboard-panel">
     <div class="onboard-top">
-      <img src="app-logo.jpg" alt="LexiFlow AI">
+      <img src="app-logo.jpg" alt="FlashCards 4U">
       <div>
         <div class="onboard-kicker">شروع سریع</div>
-        <div class="onboard-title">به LexiFlow AI خوش آمدی</div>
+        <div class="onboard-title">به FlashCards 4U خوش آمدی</div>
       </div>
     </div>
     <div class="onboard-steps">
@@ -811,7 +822,7 @@
     <button class="bnt" id="btn_study"><div class="bico">📖</div><div class="blbl">مطالعه</div></button>
     <button class="bnt" id="btn_quiz"><div class="bico">☑</div><div class="blbl">آزمون</div></button>
   <button class="bnt" id="btn_stats"><div class="bico">📊</div><div class="blbl">آمار</div></button>
-    <button class="bnt" id="btn_mycards" onclick="gotoTab('mycards')"><div class="bico">⭐</div><div class="blbl">کارت‌های من</div></button>
+    <button class="bnt" id="btn_mycards" onclick="gotoTab('mycards')"><div class="bico">🗂️</div><div class="blbl">کارت‌های من</div></button>
   </div>
 <script src="vocab.js"></script>
 <script src="storage.js"></script>
@@ -820,4 +831,5 @@
 <script src="app.js"></script>
 </body>
 </html>
+
 
