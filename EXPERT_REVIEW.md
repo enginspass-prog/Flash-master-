@@ -1,4 +1,4 @@
-# LexiFlow AI v65 - Product Redesign Review
+# LexiFlow AI v66 - Product Redesign Review
 
 This release is a full product-design pass over the learning app. The "specialists" are design perspectives applied by ChatGPT/Codex, not real people with claimed degrees or employment history.
 
@@ -14,6 +14,7 @@ This release is a full product-design pass over the learning app. The "specialis
 
 - Clarified the main promise: a daily AI-style English vocabulary coach with 20,466 cards, CEFR levels, SRS review, quizzes, pronunciation, and progress stats.
 - Added a stronger home hero that explains the product in one glance before the user starts studying.
+- Added first-run onboarding so a new learner understands the top icons, study flow, quiz modes, font scaling, and pronunciation.
 - Kept fast actions visible: study, level, quiz, card list, stats, settings, and redesign report.
 - Positioned the app as a serious learning tool rather than only a card viewer.
 
@@ -24,23 +25,25 @@ This release is a full product-design pass over the learning app. The "specialis
 - The top menu keeps logo/name/settings compact and recognizable.
 - The bottom navigation keeps the main workflows one tap away.
 - Help text remains available on symbolic stats such as streak and XP.
+- Added a guided onboarding panel with direct actions for study and font settings.
 - Text scaling and Persian readability remain central because the app is used on mobile by learners with different vision needs.
 
 ## 4. Technical Review
 
 - Updated PWA metadata and service-worker cache version so GitHub Pages can pick up the new release.
+- Restored the toast/help-tip overlay nodes explicitly in the document so help messages and feedback have stable targets.
 - Preserved the large vocabulary database format and the existing quiz/study architecture.
 - Kept the v63/v64 fixes for study queue, quiz entry points, mobile back behavior, settings layout, and app logo.
 - Avoided fake AI credentials in UI and docs; the app explains that the expert board is a product-design framing.
 
 ## Page-by-page Pass
 
-- Login: modernized brand, subtitle, logo presentation, CTA styling, and avatar set.
-- Home: added hero, clearer product promise, redesigned expert-board copy, and stronger quick-action structure.
+- Login: modernized brand, subtitle, logo presentation, CTA styling, avatar set, and first-run onboarding.
+- Home: added hero, clearer product promise, redesigned expert-board copy, onboarding, and stronger quick-action structure.
 - Study: preserved card readability and mobile-safe navigation from the prior fix.
 - Quiz: preserved the fixed quiz launch paths and checkbox-style quiz icon.
 - Stats: retained explainable XP/streak help behavior for symbolic metrics.
-- Settings: retained responsive settings and text-scale support for Persian/English readability.
+- Settings: retained responsive settings, text-scale support for Persian/English readability, and added Voice Studio for pronunciation testing.
 - Levels and categories: retained CEFR/topic taxonomy and direct quiz buttons for each group.
 - My Cards: retained personal cards and personal-card quiz flow.
 

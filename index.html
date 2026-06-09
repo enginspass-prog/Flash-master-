@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#050814">
 <meta name="screen-orientation" content="any">
-<title>LexiFlow AI v65</title>
+<title>LexiFlow AI v66</title>
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
@@ -31,7 +31,7 @@
     <div id="login" class="scr on">
       <div class="lbox">
         <div class="l-logo"><img class="app-logo-img" src="app-logo.jpg" alt="LexiFlow AI"></div>
-        <div class="l-ttl">LexiFlow AI <span style="font-size:11px;color:var(--gd)">v65</span></div>
+        <div class="l-ttl">LexiFlow AI <span style="font-size:11px;color:var(--gd)">v66</span></div>
         <div class="l-sub">مربی هوشمند لغات انگلیسی با SRS، آزمون، تلفظ و مسیر روزانه</div>
         <div id="ulsec" style="display:none">
           <div id="ul" class="ul"></div>
@@ -107,7 +107,7 @@
       </div>
       <div class="card2 expert-board">
         <div class="c2t">🧭 بازنویسی با نگاه متخصصان محصول</div>
-        <div class="expert-lead">در v65 هر صفحه مثل یک محصول واقعی بررسی شد: اول پیام برند و اعتماد، بعد مسیر یادگیری، بعد دسترسی سریع و خوانایی موبایل.</div>
+        <div class="expert-lead">در v66 هر صفحه مثل یک محصول واقعی بررسی شد: اول پیام برند و اعتماد، بعد مسیر یادگیری، بعد دسترسی سریع، آموزش اولیه و خوانایی موبایل.</div>
         <div class="expert-grid">
           <div class="expert-card">
             <div class="expert-role">🎨 گرافیک</div>
@@ -135,7 +135,7 @@
         <button id="dash-words-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--gr);background:rgba(0,208,132,.08);color:var(--gr);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📋 لیست کارت‌ها</button>
         <button id="dash-stats-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--or);background:rgba(255,140,0,.08);color:var(--or);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📊 آمار</button>
         <button id="dash-settings-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--t3);background:rgba(255,255,255,.04);color:var(--t2);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">⚙️ تنظیمات</button>
-        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v65</button>
+        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v66</button>
       </div>
     </div>
 
@@ -557,6 +557,13 @@
       </div>
       <div class="cfgs">
         <div class="cfgsh">🔊 صدا</div>
+        <div class="voice-studio">
+          <div>
+            <div class="voice-title">Voice Studio</div>
+            <div class="voice-copy">لهجه و سرعت را انتخاب کن و قبل از مطالعه، تلفظ نمونه را بشنو.</div>
+          </div>
+          <button id="voice-test-btn" class="voice-test" type="button">🔊 Test</button>
+        </div>
         <div class="cfgr">
           <div class="cfgl"><div class="cfgt">تلفظ خودکار</div><div class="cfgd">زمان نمایش کارت</div></div>
           <div class="seg" id="seg-speak">
@@ -604,18 +611,6 @@
       <div class="frow" id="frow" style="margin-bottom:8px"></div>
       <div id="wl"></div>
     </div>
-
-<div id="toast"></div>
-<div id="help-tip" class="help-tip" role="status">
-  <div class="help-tip-title" id="help-tip-title"></div>
-  <div class="help-tip-body" id="help-tip-body"></div>
-</div>
-
-<script src="vocab.js"></script>
-<script src="storage.js"></script>
-<script src="quiz.js"></script>
-<script src="mycards.js"></script>
-<script src="app.js"></script>
 
     <!-- MY CARDS SCREEN -->
     <div id="mycards" class="scr">
@@ -783,14 +778,46 @@
   </div><!-- /screens -->
 </div>
 
+<div id="toast"></div>
+<div id="help-tip" class="help-tip" role="status">
+  <div class="help-tip-title" id="help-tip-title"></div>
+  <div class="help-tip-body" id="help-tip-body"></div>
+</div>
+<div id="onboard" class="onboard" aria-hidden="true">
+  <div class="onboard-panel">
+    <div class="onboard-top">
+      <img src="app-logo.jpg" alt="LexiFlow AI">
+      <div>
+        <div class="onboard-kicker">شروع سریع</div>
+        <div class="onboard-title">به LexiFlow AI خوش آمدی</div>
+      </div>
+    </div>
+    <div class="onboard-steps">
+      <div class="onboard-step"><b>1</b><span>از بالا سطح، XP و زنجیره مطالعه را ببین؛ روی آیکون‌ها بزنی معنی‌شان توضیح داده می‌شود.</span></div>
+      <div class="onboard-step"><b>2</b><span>از خانه با «شروع مطالعه» وارد کارت‌ها شو و با آسان، خوب، سخت یا فراموش جواب بده.</span></div>
+      <div class="onboard-step"><b>3</b><span>در آزمون، معنی، شنیداری، تطبیق، دیکته و جای خالی را تمرین کن.</span></div>
+      <div class="onboard-step"><b>4</b><span>اگر متن ریز بود، تنظیمات فونت را روی A++ یا A+++ بگذار و صدای تلفظ را تست کن.</span></div>
+    </div>
+    <div class="onboard-actions">
+      <button id="onboard-start" class="onboard-primary" type="button">شروع مطالعه</button>
+      <button id="onboard-settings" class="onboard-secondary" type="button">تنظیم فونت</button>
+      <button id="onboard-later" class="onboard-ghost" type="button">بعداً</button>
+    </div>
+  </div>
+</div>
 <div id="bnav">
     <div class="nind" id="nind"></div>
     <button class="bnt on" id="btn_welcome"><div class="bico">🏠</div><div class="blbl">خانه</div></button>
     <button class="bnt" id="btn_study"><div class="bico">📖</div><div class="blbl">مطالعه</div></button>
     <button class="bnt" id="btn_quiz"><div class="bico">☑</div><div class="blbl">آزمون</div></button>
-    <button class="bnt" id="btn_stats"><div class="bico">📊</div><div class="blbl">آمار</div></button>
+  <button class="bnt" id="btn_stats"><div class="bico">📊</div><div class="blbl">آمار</div></button>
     <button class="bnt" id="btn_mycards" onclick="gotoTab('mycards')"><div class="bico">⭐</div><div class="blbl">کارت‌های من</div></button>
   </div>
+<script src="vocab.js"></script>
+<script src="storage.js"></script>
+<script src="quiz.js"></script>
+<script src="mycards.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
 

@@ -1,4 +1,4 @@
-﻿// LexiFlow AI v65 app logic
+﻿// LexiFlow AI v66 app logic
 // vocab loaded externally
 var LC={A1:"#00d084",A2:"#00c9c9",B1:"#4d9fff",B2:"#b87fff",C1:"#ff8c00",C2:"#ff3b5c",GR:"#9b59b6",PRV:"#e67e22",AWL:"#27ae60",MED:"#e74c3c",BIZ:"#2980b9",TECH:"#8e44ad",HOM:"#e91e8c",BOD:"#00bcd4",FOD:"#8bc34a",NAT:"#4caf50",TRN:"#ff9800",HLT:"#f44336",EMO:"#9c27b0",CLO:"#ff5722",EDU:"#3f51b5",VRB:"#009688",ADJ:"#673ab7",ADV:"#607d8b",SPT:"#ff6b35",SCI:"#5c6bc0",ART:"#ab47bc",ENV:"#26a69a",WRK:"#42a5f5",TRV:"#26c6da",DIG:"#7e57c2",WEA:"#66bb6a",FPR:"#ef5350",LAW:"#8d6e63",PSY:"#ff7043",COL:"#00897b",PV:"#1e88e5",IDM:"#e53935"};
 var LE={A1:"🌱",A2:"🌿",B1:"🌳",B2:"🦅",C1:"🔥",C2:"🏆",GR:"📝",PRV:"💬",AWL:"🎓",MED:"🏥",BIZ:"💼",TECH:"💻",HOM:"🏠",BOD:"🫀",FOD:"🍎",NAT:"🌍",TRN:"🚗",HLT:"💊",EMO:"❤️",CLO:"👕",EDU:"📚",VRB:"⚡",ADJ:"🎨",ADV:"💨",SPT:"⚽",SCI:"🔬",ART:"🎭",ENV:"🌿",WRK:"💼",TRV:"✈️",DIG:"📱",WEA:"☀️",FPR:"🍳",LAW:"⚖️",PSY:"🧠",COL:"🔗",PV:"🔀",IDM:"💡"};
@@ -43,6 +43,7 @@ var BADGES=[
   {id:"b11",ico:"👑",lbl:"۱۰۰۰ XP",ok:function(g,p){return g.totalXP>=1000;}},
 ];
 var AVS=["🚀","🧠","🎧","💎","⚡","🌍","🎓","🧑‍💻","📚","🏆"];
+var APP_VERSION=66;
 
 // STATE
 var users={},uid=null,sq=[],cur=null,flipped=false;
@@ -83,6 +84,36 @@ function setupIconHelp(){
     if(!el)return;
     showHelpTip(el.getAttribute("data-help-title"),el.getAttribute("data-help-body"));
   });
+}
+function showOnboard(){
+  var ob=document.getElementById("onboard");
+  if(!ob)return;
+  ob.classList.add("show");
+  ob.setAttribute("aria-hidden","false");
+}
+function hideOnboard(markDone){
+  var ob=document.getElementById("onboard");
+  if(ob){ob.classList.remove("show");ob.setAttribute("aria-hidden","true");}
+  if(markDone&&gu()){gu().onboardSeen=true;save();}
+}
+function maybeShowOnboard(){
+  var u=gu();
+  if(!u||u.onboardSeen)return;
+  setTimeout(showOnboard,650);
+}
+function setupOnboard(){
+  var later=document.getElementById("onboard-later");
+  var start=document.getElementById("onboard-start");
+  var settings=document.getElementById("onboard-settings");
+  if(later)later.addEventListener("click",function(){hideOnboard(true);});
+  if(start)start.addEventListener("click",function(){hideOnboard(true);buildQ();gotoTab("study");});
+  if(settings)settings.addEventListener("click",function(){hideOnboard(true);gotoTab("settings");});
+  var ob=document.getElementById("onboard");
+  if(ob)ob.addEventListener("click",function(e){if(e.target===ob)hideOnboard(true);});
+}
+function setupVoiceStudio(){
+  var btn=document.getElementById("voice-test-btn");
+  if(btn)btn.addEventListener("click",function(){speakW("LexiFlow makes vocabulary practice clear and memorable.");});
 }
 function applyFontScale(){
   var s=cfg.fontSize||1.08;
@@ -373,6 +404,8 @@ function init(){
   setupQuizButtons();
   setupBackNavigation();
   setupIconHelp();
+  setupOnboard();
+  setupVoiceStudio();
 
   if(uid&&users[uid])afterLogin();
   else{renderLogin();showScr("login");syncBrowserState("login",true);buildAvatars();document.getElementById("bnav").style.display="none";}
@@ -442,7 +475,7 @@ function createUser(){
   });
   if(existingKey){loginAs(existingKey);return;}
   var k="u"+Date.now();
-  users[k]={name:name,avatar:selAv,level:"A1",progress:{},game:{streak:0,lastStudy:"",totalXP:0,history:{}},joinDate:new Date().toLocaleDateString("fa-IR")};
+  users[k]={name:name,avatar:selAv,level:"A1",progress:{},game:{streak:0,lastStudy:"",totalXP:0,history:{}},joinDate:new Date().toLocaleDateString("fa-IR"),onboardSeen:false};
   loginAs(k);
 }
 
@@ -461,8 +494,10 @@ function afterLogin(){
   if(!u.levelSet){
     gotoTab("lvls",{skipStack:true,replace:true});document.getElementById("bnav").style.display="flex";
     toast("سطح خود را انتخاب کنید 👇");
+    maybeShowOnboard();
   } else {
     gotoTab("welcome",{skipStack:true,replace:true});document.getElementById("bnav").style.display="flex";
+    maybeShowOnboard();
   }
   document.querySelectorAll("#bnav .bnt").forEach(function(b){b.classList.remove("on");});
   var wb=document.getElementById("btn_welcome");if(wb)wb.classList.add("on");
@@ -1410,7 +1445,7 @@ function resetUser(){if(!gu())return;if(!confirm("پیشرفت "+gu().name+" پ�
 function exportProfile(){
   var backup={
     app:"LexiFlow AI",
-    version:65,
+    version:APP_VERSION,
     exportedAt:new Date().toISOString(),
     uid:uid,
     users:users,
@@ -1423,7 +1458,7 @@ function exportProfile(){
   var url=URL.createObjectURL(blob);
   var a=document.createElement("a");
   a.href=url;
-  a.download="lexiflow_profile_v65_"+new Date().toISOString().slice(0,10)+".json";
+  a.download="lexiflow_profile_v66_"+new Date().toISOString().slice(0,10)+".json";
   a.click();
   URL.revokeObjectURL(url);
   toast("بکاپ کامل پروفایل ساخته شد ✅");
@@ -1968,5 +2003,6 @@ function initMycards(){
   mcTab("list");
   renderMyCards();
 }
+
 
 

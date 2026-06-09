@@ -1,4 +1,4 @@
-const CACHE_NAME = "lexiflow-ai-v65";
+const CACHE_NAME = "lexiflow-ai-v66";
 const CORE_ASSETS = [
   "./",
   "./index.html",
