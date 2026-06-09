@@ -1,5 +1,5 @@
 ﻿{
-  "name": "FlashCards 4U v67",
+  "name": "FlashCards 4U v68",
   "short_name": "FC4U",
   "description": "Smart English flashcard coach with CEFR, SRS, quizzes, pronunciation, and offline support.",
   "start_url": "./",
@@ -20,4 +20,5 @@
     }
   ]
 }
+
 

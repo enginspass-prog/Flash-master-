@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "flashcards-4u-v67";
+﻿const CACHE_NAME = "flashcards-4u-v68";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -10,6 +10,7 @@ const CORE_ASSETS = [
   "./vocab.js",
   "./manifest.json",
   "./app-logo.jpg",
+  "./app-logo.svg",
   "./icon-192.png",
   "./icon-512.png"
 ];
@@ -43,4 +44,5 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+
 

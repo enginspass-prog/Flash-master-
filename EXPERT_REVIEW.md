@@ -1,10 +1,10 @@
-﻿# FlashCards 4U v67 - Product Redesign Review
+﻿# FlashCards 4U v68 - Product Redesign Review
 
 This release is a full product-design pass over the learning app. The "specialists" are design perspectives applied by ChatGPT/Codex, not real people with claimed degrees or employment history.
 
 ## 1. Graphic Design Review
 
-- Restored the original `FlashCards 4U` name after the user rejected the temporary LexiFlow naming direction.
+- Restored and kept the original `FlashCards 4U` name as the product identity.
 - Kept the user-provided Aa card logo, but promoted it into the navigation, login, manifest, and PWA identity.
 - Reworked the visual language around a 2026-style mobile product feel: glass surfaces, sharper hierarchy, cyan/violet/mint accents, stronger CTA buttons, and less flat dark-blue repetition.
 - Improved perceived polish on login, home, dashboard cards, expert board, buttons, and navigation.
@@ -55,4 +55,5 @@ This release is a full product-design pass over the learning app. The "specialis
 - Accessible text scaling
 - Progressive Web App cache versioning
 - Clear visual hierarchy for repeated learning sessions
+
 

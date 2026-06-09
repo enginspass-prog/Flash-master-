@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#050814">
 <meta name="screen-orientation" content="any">
-<title>FlashCards 4U v67</title>
+<title>FlashCards 4U v68</title>
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
@@ -15,7 +15,7 @@
 <div id="app">
   <div id="nav">
     <button class="nav-home" id="nav-home" type="button" title="خانه">
-      <img class="nav-logo" src="app-logo.jpg" alt="FlashCards 4U">
+      <img class="nav-logo" src="app-logo.svg" alt="FlashCards 4U">
       <span class="nav-ttl">FlashCards 4U</span>
     </button>
     <div class="nav-r">
@@ -35,8 +35,8 @@
     <!-- LOGIN -->
     <div id="login" class="scr on">
       <div class="lbox">
-        <div class="l-logo"><img class="app-logo-img" src="app-logo.jpg" alt="FlashCards 4U"></div>
-        <div class="l-ttl">FlashCards 4U <span style="font-size:11px;color:var(--gd)">v67</span></div>
+        <div class="l-logo"><img class="app-logo-img" src="app-logo.svg" alt="FlashCards 4U"></div>
+        <div class="l-ttl">FlashCards 4U <span style="font-size:11px;color:var(--gd)">v68</span></div>
         <div class="l-sub">مربی هوشمند لغات انگلیسی با SRS، آزمون، تلفظ و مسیر روزانه</div>
         <div id="ulsec" style="display:none">
           <div id="ul" class="ul"></div>
@@ -112,7 +112,7 @@
       </div>
       <div class="card2 expert-board">
         <div class="c2t">🧭 بازنویسی با نگاه متخصصان محصول</div>
-        <div class="expert-lead">در v67 تمرکز روی برگشت نام اصلی، اصلاح آیکون‌ها، جای درست تنظیمات و انتخاب گوینده برای تلفظ بود.</div>
+        <div class="expert-lead">در v68 همه صفحه‌های اصلی با زبان بصری جدید، داشبوردهای روشن‌تر، کارت‌های مدرن و لوگوی تازه بازطراحی شدند.</div>
         <div class="expert-grid">
           <div class="expert-card">
             <div class="expert-role">🎨 گرافیک</div>
@@ -140,7 +140,7 @@
         <button id="dash-words-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--gr);background:rgba(0,208,132,.08);color:var(--gr);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📋 لیست کارت‌ها</button>
         <button id="dash-stats-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--or);background:rgba(255,140,0,.08);color:var(--or);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📊 آمار</button>
         <button id="dash-settings-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--t3);background:rgba(255,255,255,.04);color:var(--t2);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">⚙️ تنظیمات</button>
-        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v67</button>
+        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v68</button>
       </div>
     </div>
 
@@ -297,6 +297,13 @@
 
     <!-- STUDY -->
     <div id="study" class="scr" style="padding:0;overflow:hidden">
+      <div class="study-dashboard">
+        <div>
+          <div class="screen-kicker">Smart Review</div>
+          <div class="screen-title">مطالعه روزانه</div>
+        </div>
+        <div class="screen-badge">SRS</div>
+      </div>
       <div id="sw" style="display:flex;flex-direction:column;height:100%">
         <div id="ca" style="flex:1;display:flex;align-items:center;justify-content:center;padding:8px 10px;position:relative;overflow:hidden;min-height:0">
           <div id="spb" style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--bd);z-index:5"><div id="spf" style="width:0%;height:100%;background:linear-gradient(90deg,var(--ac),var(--pu));transition:width .6s;border-radius:0 3px 3px 0"></div></div>
@@ -341,6 +348,14 @@
 
     <!-- QUIZ -->
     <div id="quiz" class="scr">
+      <div class="screen-hero quiz-hero">
+        <div>
+          <div class="screen-kicker">Practice Lab</div>
+          <div class="screen-title">آزمون هوشمند</div>
+          <div class="screen-copy">نوع تمرین، سطح و تعداد سوال را انتخاب کن؛ هر آزمون مستقیم به مطالعه وصل است.</div>
+        </div>
+        <div class="screen-orb">☑</div>
+      </div>
       <!-- QUIZ SETUP: mode selector + category + count -->
       <div class="sc" id="quiz-setup">
         <div class="sct" style="margin-bottom:12px">🧪 آزمون</div>
@@ -491,6 +506,14 @@
 
     <!-- STATS -->
     <div id="stats" class="scr">
+      <div class="screen-hero stats-hero">
+        <div>
+          <div class="screen-kicker">Learning Analytics</div>
+          <div class="screen-title">داشبورد پیشرفت</div>
+          <div class="screen-copy">روند یادگیری، سطح تسلط، نقاط قوی و کارت‌های ضعیف را یک‌جا ببین.</div>
+        </div>
+        <div class="screen-orb">📊</div>
+      </div>
       <div class="strc" data-help-title="خلاصه فعالیت" data-help-body="سمت راست XP کل و سمت چپ زنجیره روزهای مطالعه را نشان می‌دهد. این بخش برای نگاه سریع به عادت مطالعه طراحی شده است."><div class="strf">🔥</div><div><div class="strn" id="str-big">0</div><div class="strl">روز پشت سر هم</div></div><div style="margin-left:auto;text-align:right"><div style="font-size:24px;font-weight:900;color:var(--gd)" id="xp-big">0⭐</div><div style="font-size:13px;color:var(--t3)">XP کل</div></div></div>
       <div class="sc"><div class="sct">📊 توزیع پیشرفت</div>
         <div class="dntw" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-height:130px">
@@ -617,6 +640,14 @@
 
     <!-- WORDS -->
     <div id="words" class="scr">
+      <div class="screen-hero library-hero">
+        <div>
+          <div class="screen-kicker">Word Library</div>
+          <div class="screen-title">کتابخانه لغات</div>
+          <div class="screen-copy">جستجو، فیلتر سطح و مرور سریع کل بانک لغات.</div>
+        </div>
+        <div class="screen-orb">🔎</div>
+      </div>
       <div class="sct" style="font-size:14px;font-weight:700;color:var(--t2);margin-bottom:8px">کتابخانه — <span id="wltot">0</span> کارت</div>
       <input class="sbox" id="wsrch" placeholder="🔍 جستجو…" autocomplete="off" style="margin-bottom:8px">
       <div class="frow" id="frow" style="margin-bottom:8px"></div>
@@ -625,6 +656,14 @@
 
     <!-- MY CARDS SCREEN -->
     <div id="mycards" class="scr">
+      <div class="screen-hero mycards-hero">
+        <div>
+          <div class="screen-kicker">Personal Deck</div>
+          <div class="screen-title">کارت‌های من</div>
+          <div class="screen-copy">کارت بساز، وارد کن، خروجی بگیر و با همان‌ها آزمون یا مطالعه انجام بده.</div>
+        </div>
+        <div class="screen-orb">🗂️</div>
+      </div>
       <!-- Tab bar inside screen -->
       <div style="display:flex;border-bottom:1px solid var(--bd);background:var(--bg1);position:sticky;top:0;z-index:10">
         <button id="mc-tab-list" onclick="mcTab('list')" style="flex:1;padding:10px 0;font-size:12px;font-weight:800;color:var(--ac);border:none;background:none;cursor:pointer;font-family:inherit;border-bottom:2px solid var(--ac);direction:rtl">📋 کارت‌های من</button>
@@ -797,7 +836,7 @@
 <div id="onboard" class="onboard" aria-hidden="true">
   <div class="onboard-panel">
     <div class="onboard-top">
-      <img src="app-logo.jpg" alt="FlashCards 4U">
+      <img src="app-logo.svg" alt="FlashCards 4U">
       <div>
         <div class="onboard-kicker">شروع سریع</div>
         <div class="onboard-title">به FlashCards 4U خوش آمدی</div>
@@ -831,5 +870,6 @@
 <script src="app.js"></script>
 </body>
 </html>
+
 
 

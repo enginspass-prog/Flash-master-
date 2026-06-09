@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="FlashCards 4U logo">
+  <defs>
+    <linearGradient id="bg" x1="22" y1="22" x2="232" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#35D6FF"/>
+      <stop offset=".48" stop-color="#7B61FF"/>
+      <stop offset="1" stop-color="#20E3A2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="72" y1="44" x2="184" y2="202" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DDEAFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#06101D" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
+  <path d="M58 84c0-17 13-30 30-30h60c17 0 30 13 30 30v96c0 17-13 30-30 30H88c-17 0-30-13-30-30V84Z" fill="#F8B6FF" opacity=".82" filter="url(#shadow)"/>
+  <path d="M74 68c0-17 13-30 30-30h62c17 0 30 13 30 30v104c0 17-13 30-30 30h-62c-17 0-30-13-30-30V68Z" fill="#A9D8FF" opacity=".9" filter="url(#shadow)"/>
+  <path d="M94 48c3-17 20-28 37-25l66 12c17 3 28 19 25 36l-18 101c-3 17-20 28-37 25l-66-12c-17-3-28-19-25-36L94 48Z" fill="url(#card)" filter="url(#shadow)"/>
+  <path d="M116 139l31-78h23l30 78h-24l-5-16h-28l-5 16h-22Zm32-34h18l-9-28-9 28Z" fill="#101B54"/>
+  <path d="M74 157h84" stroke="#8F8CFF" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+  <rect x="151" y="151" width="70" height="52" rx="20" fill="#111B6A"/>
+  <text x="186" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="800" fill="#fff">4U</text>
+  <path d="M202 55l5 11 12 2-9 8 2 12-10-6-11 6 3-12-9-8 12-2 5-11Z" fill="#FFD66B"/>
+</svg>
