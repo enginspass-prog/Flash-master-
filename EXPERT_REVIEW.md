@@ -1,4 +1,4 @@
-﻿# FlashCards 4U v68 - Product Redesign Review
+﻿# FlashCards 4U v69 - Product Redesign Review
 
 This release is a full product-design pass over the learning app. The "specialists" are design perspectives applied by ChatGPT/Codex, not real people with claimed degrees or employment history.
 
@@ -7,6 +7,7 @@ This release is a full product-design pass over the learning app. The "specialis
 - Restored and kept the original `FlashCards 4U` name as the product identity.
 - Kept the user-provided Aa card logo, but promoted it into the navigation, login, manifest, and PWA identity.
 - Reworked the visual language around a 2026-style mobile product feel: glass surfaces, sharper hierarchy, cyan/violet/mint accents, stronger CTA buttons, and less flat dark-blue repetition.
+- Added a custom inline SVG icon system for the main sections so navigation and page headers no longer depend on emoji or generic ready-made icons.
 - Improved perceived polish on login, home, dashboard cards, expert board, buttons, and navigation.
 - Kept CEFR and topic colors as functional learning signals rather than random decoration.
 
@@ -23,7 +24,7 @@ This release is a full product-design pass over the learning app. The "specialis
 - Home now behaves more like a learning cockpit: user identity, progress, motivation, feature explanation, and clear actions.
 - Mobile-first spacing and card shapes were updated so the app feels usable on small phones.
 - The top menu keeps logo/name/settings compact and recognizable.
-- The bottom navigation keeps the main workflows one tap away.
+- The bottom navigation keeps the main workflows one tap away and now uses consistent product-specific symbols for Home, Study, Quiz, Stats, and My Cards.
 - Help text remains available on symbolic stats such as streak and XP.
 - Added a guided onboarding panel with direct actions for study and font settings.
 - Text scaling and Persian readability remain central because the app is used on mobile by learners with different vision needs.
@@ -41,8 +42,8 @@ This release is a full product-design pass over the learning app. The "specialis
 - Login: modernized brand, subtitle, logo presentation, CTA styling, avatar set, and first-run onboarding.
 - Home: added hero, clearer product promise, redesigned expert-board copy, onboarding, and stronger quick-action structure.
 - Study: preserved card readability and mobile-safe navigation from the prior fix.
-- Quiz: preserved the fixed quiz launch paths and checkbox-style quiz icon.
-- Stats: retained explainable XP/streak help behavior for symbolic metrics.
+- Quiz: preserved the fixed quiz launch paths and replaced the lab-style symbol with a custom checked-test card icon.
+- Stats: retained explainable XP/streak help behavior for symbolic metrics and added a custom analytics icon in the page header/navigation.
 - Settings: retained responsive settings, text-scale support for Persian/English readability, added Voice Studio for pronunciation testing, and added a real voice selector based on the browser or phone voices.
 - Levels and categories: retained CEFR/topic taxonomy and direct quiz buttons for each group.
 - My Cards: retained personal cards and personal-card quiz flow.

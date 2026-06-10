@@ -6,12 +6,56 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#050814">
 <meta name="screen-orientation" content="any">
-<title>FlashCards 4U v68</title>
+<title>FlashCards 4U v69</title>
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg class="icon-sprite" aria-hidden="true">
+  <symbol id="ico-home" viewBox="0 0 24 24">
+    <path d="M4 11.2 12 4l8 7.2v7.3a1.8 1.8 0 0 1-1.8 1.8H5.8A1.8 1.8 0 0 1 4 18.5v-7.3Z"/>
+    <path d="M9 20v-6h6v6"/>
+  </symbol>
+  <symbol id="ico-study" viewBox="0 0 24 24">
+    <path d="M5 5.5c0-1 1-1.7 2-1.3l5 2.1 5-2.1c1-.4 2 .3 2 1.3v12.8c0 .8-.8 1.4-1.6 1.1L12 17l-5.4 2.4c-.8.3-1.6-.3-1.6-1.1V5.5Z"/>
+    <path d="M12 6.3V17M8 8.8h1.8M14.2 8.8H16M8 12h1.8M14.2 12H16"/>
+  </symbol>
+  <symbol id="ico-quiz" viewBox="0 0 24 24">
+    <rect x="5" y="4" width="14" height="16" rx="3"/>
+    <path d="m8.5 11 2 2 5-5M8.5 16h7"/>
+  </symbol>
+  <symbol id="ico-stats" viewBox="0 0 24 24">
+    <path d="M5 19V5M5 19h14"/>
+    <rect x="8" y="11" width="2.8" height="5" rx="1"/>
+    <rect x="12" y="8" width="2.8" height="8" rx="1"/>
+    <rect x="16" y="5.5" width="2.8" height="10.5" rx="1"/>
+  </symbol>
+  <symbol id="ico-deck" viewBox="0 0 24 24">
+    <rect x="5" y="7" width="13" height="11" rx="2" transform="rotate(-7 11.5 12.5)"/>
+    <rect x="7" y="5" width="13" height="11" rx="2" transform="rotate(5 13.5 10.5)"/>
+    <path d="M10 10h6M10 13h4"/>
+  </symbol>
+  <symbol id="ico-library" viewBox="0 0 24 24">
+    <path d="M5 5h10a4 4 0 0 1 4 4v10H9a4 4 0 0 1-4-4V5Z"/>
+    <path d="M9 8h6M9 11h6M9 14h4"/>
+  </symbol>
+  <symbol id="ico-level" viewBox="0 0 24 24">
+    <path d="M5 18h14M7 16l4-8 3 5 2-3 2 6"/>
+    <circle cx="11" cy="8" r="1.4"/>
+  </symbol>
+  <symbol id="ico-settings" viewBox="0 0 24 24">
+    <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+    <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.05.05a2 2 0 0 1-2.83 2.83l-.05-.05a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21a2 2 0 0 1-4 0v-.07a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.05.05a2 2 0 0 1-2.83-2.83l.05-.05A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3a2 2 0 0 1 0-4h.07A1.7 1.7 0 0 0 4.6 8.94a1.7 1.7 0 0 0-.34-1.88l-.05-.05a2 2 0 0 1 2.83-2.83l.05.05a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.01V3a2 2 0 0 1 4 0v.01a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.05-.05a2 2 0 0 1 2.83 2.83l-.05.05a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.56 1.03H21a2 2 0 0 1 0 4h-.04A1.7 1.7 0 0 0 19.4 15Z"/>
+  </symbol>
+  <symbol id="ico-star" viewBox="0 0 24 24">
+    <path d="m12 3 2.7 5.45 6 .87-4.35 4.22 1.03 5.96L12 16.7 6.62 19.5l1.03-5.96L3.3 9.32l6-.87L12 3Z"/>
+  </symbol>
+  <symbol id="ico-flame" viewBox="0 0 24 24">
+    <path d="M12.4 21c3.9-.2 6.6-2.9 6.6-6.8 0-3.1-1.8-5.2-3.6-6.9-.4 1.9-1.4 3.1-2.7 3.8.3-3.2-1-5.5-3.5-7.8-.1 3.7-2 5.8-3.2 7.7-.7 1.1-1 2.1-1 3.3 0 3.7 3.1 6.9 7.4 6.7Z"/>
+    <path d="M12.1 17.8c1.5-.1 2.6-1.1 2.6-2.5 0-1-.5-1.8-1.2-2.5-.4 1-.9 1.6-1.7 2-.2-1.2-.8-2.1-1.8-2.9.1 1.7-.9 2.5-1.2 3.4-.4 1.2.7 2.6 3.3 2.5Z"/>
+  </symbol>
+</svg>
 <div id="app">
   <div id="nav">
     <button class="nav-home" id="nav-home" type="button" title="خانه">
@@ -19,14 +63,11 @@
       <span class="nav-ttl">FlashCards 4U</span>
     </button>
     <div class="nav-r">
-      <div id="sp-pill" data-help-title="روزهای پیوسته" data-help-body="این عدد نشان می‌دهد چند روز پشت سر هم مطالعه داشته‌ای. هر روز که کارت مرور کنی، زنجیره‌ات حفظ می‌شود.">🔥<span id="snav">0</span></div>
-      <div id="xp-pill" data-help-title="امتیاز تجربه" data-help-body="ستاره‌ها امتیاز فعالیت تو هستند. با مطالعه و آزمون بیشتر می‌شوند و پیشرفت کلی را نشان می‌دهند.">⭐<span id="xnav">0</span></div>
+      <div id="sp-pill" data-help-title="روزهای پیوسته" data-help-body="این عدد نشان می‌دهد چند روز پشت سر هم مطالعه داشته‌ای. هر روز که کارت مرور کنی، زنجیره‌ات حفظ می‌شود."><svg class="app-icon mini" aria-hidden="true"><use href="#ico-flame"></use></svg><span id="snav">0</span></div>
+      <div id="xp-pill" data-help-title="امتیاز تجربه" data-help-body="ستاره‌ها امتیاز فعالیت تو هستند. با مطالعه و آزمون بیشتر می‌شوند و پیشرفت کلی را نشان می‌دهند."><svg class="app-icon mini" aria-hidden="true"><use href="#ico-star"></use></svg><span id="xnav">0</span></div>
       <button id="lvlbtn" data-help-title="سطح فعلی" data-help-body="اینجا سطح یا دسته‌ای را که الان مطالعه می‌کنی می‌بینی. با لمس آن می‌توانی سطح یا موضوع را عوض کنی.">A1▾</button>
       <button id="settings-quick-btn" class="icon-btn settings-icon" title="تنظیمات" aria-label="تنظیمات" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
-          <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.05.05a2 2 0 0 1-2.83 2.83l-.05-.05a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21a2 2 0 0 1-4 0v-.07a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.05.05a2 2 0 0 1-2.83-2.83l.05-.05A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3a2 2 0 0 1 0-4h.07A1.7 1.7 0 0 0 4.6 8.94a1.7 1.7 0 0 0-.34-1.88l-.05-.05a2 2 0 0 1 2.83-2.83l.05.05a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 10 3.01V3a2 2 0 0 1 4 0v.01a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.05-.05a2 2 0 0 1 2.83 2.83l-.05.05a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.56 1.03H21a2 2 0 0 1 0 4h-.04A1.7 1.7 0 0 0 19.4 15Z"/>
-        </svg>
+        <svg class="app-icon" aria-hidden="true"><use href="#ico-settings"></use></svg>
       </button>
     </div>
   </div>
@@ -36,7 +77,7 @@
     <div id="login" class="scr on">
       <div class="lbox">
         <div class="l-logo"><img class="app-logo-img" src="app-logo.svg" alt="FlashCards 4U"></div>
-        <div class="l-ttl">FlashCards 4U <span style="font-size:11px;color:var(--gd)">v68</span></div>
+        <div class="l-ttl">FlashCards 4U <span style="font-size:11px;color:var(--gd)">v69</span></div>
         <div class="l-sub">مربی هوشمند لغات انگلیسی با SRS، آزمون، تلفظ و مسیر روزانه</div>
         <div id="ulsec" style="display:none">
           <div id="ul" class="ul"></div>
@@ -112,7 +153,7 @@
       </div>
       <div class="card2 expert-board">
         <div class="c2t">🧭 بازنویسی با نگاه متخصصان محصول</div>
-        <div class="expert-lead">در v68 همه صفحه‌های اصلی با زبان بصری جدید، داشبوردهای روشن‌تر، کارت‌های مدرن و لوگوی تازه بازطراحی شدند.</div>
+        <div class="expert-lead">در v69 همه صفحه‌های اصلی با زبان بصری جدید، داشبوردهای روشن‌تر، کارت‌های مدرن، لوگوی تازه و آیکون‌های اختصاصی بازطراحی شدند.</div>
         <div class="expert-grid">
           <div class="expert-card">
             <div class="expert-role">🎨 گرافیک</div>
@@ -140,7 +181,7 @@
         <button id="dash-words-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--gr);background:rgba(0,208,132,.08);color:var(--gr);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📋 لیست کارت‌ها</button>
         <button id="dash-stats-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--or);background:rgba(255,140,0,.08);color:var(--or);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">📊 آمار</button>
         <button id="dash-settings-btn" style="padding:14px;border-radius:var(--rs);border:1px solid var(--t3);background:rgba(255,255,255,.04);color:var(--t2);font-size:12px;font-weight:800;cursor:pointer;font-family:inherit">⚙️ تنظیمات</button>
-        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">🧭 گزارش بازطراحی v68</button>
+        <button id="dash-expert-btn" style="grid-column:1/-1;padding:13px;border-radius:var(--rs);border:1px solid var(--ac2);background:linear-gradient(135deg,rgba(77,159,255,.1),rgba(184,127,255,.12));color:var(--ac2);font-size:12px;font-weight:900;cursor:pointer;font-family:inherit">گزارش بازطراحی v69</button>
       </div>
     </div>
 
@@ -354,7 +395,7 @@
           <div class="screen-title">آزمون هوشمند</div>
           <div class="screen-copy">نوع تمرین، سطح و تعداد سوال را انتخاب کن؛ هر آزمون مستقیم به مطالعه وصل است.</div>
         </div>
-        <div class="screen-orb">☑</div>
+        <div class="screen-orb"><svg class="app-icon xl" aria-hidden="true"><use href="#ico-quiz"></use></svg></div>
       </div>
       <!-- QUIZ SETUP: mode selector + category + count -->
       <div class="sc" id="quiz-setup">
@@ -512,7 +553,7 @@
           <div class="screen-title">داشبورد پیشرفت</div>
           <div class="screen-copy">روند یادگیری، سطح تسلط، نقاط قوی و کارت‌های ضعیف را یک‌جا ببین.</div>
         </div>
-        <div class="screen-orb">📊</div>
+        <div class="screen-orb"><svg class="app-icon xl" aria-hidden="true"><use href="#ico-stats"></use></svg></div>
       </div>
       <div class="strc" data-help-title="خلاصه فعالیت" data-help-body="سمت راست XP کل و سمت چپ زنجیره روزهای مطالعه را نشان می‌دهد. این بخش برای نگاه سریع به عادت مطالعه طراحی شده است."><div class="strf">🔥</div><div><div class="strn" id="str-big">0</div><div class="strl">روز پشت سر هم</div></div><div style="margin-left:auto;text-align:right"><div style="font-size:24px;font-weight:900;color:var(--gd)" id="xp-big">0⭐</div><div style="font-size:13px;color:var(--t3)">XP کل</div></div></div>
       <div class="sc"><div class="sct">📊 توزیع پیشرفت</div>
@@ -646,7 +687,7 @@
           <div class="screen-title">کتابخانه لغات</div>
           <div class="screen-copy">جستجو، فیلتر سطح و مرور سریع کل بانک لغات.</div>
         </div>
-        <div class="screen-orb">🔎</div>
+        <div class="screen-orb"><svg class="app-icon xl" aria-hidden="true"><use href="#ico-library"></use></svg></div>
       </div>
       <div class="sct" style="font-size:14px;font-weight:700;color:var(--t2);margin-bottom:8px">کتابخانه — <span id="wltot">0</span> کارت</div>
       <input class="sbox" id="wsrch" placeholder="🔍 جستجو…" autocomplete="off" style="margin-bottom:8px">
@@ -662,7 +703,7 @@
           <div class="screen-title">کارت‌های من</div>
           <div class="screen-copy">کارت بساز، وارد کن، خروجی بگیر و با همان‌ها آزمون یا مطالعه انجام بده.</div>
         </div>
-        <div class="screen-orb">🗂️</div>
+        <div class="screen-orb"><svg class="app-icon xl" aria-hidden="true"><use href="#ico-deck"></use></svg></div>
       </div>
       <!-- Tab bar inside screen -->
       <div style="display:flex;border-bottom:1px solid var(--bd);background:var(--bg1);position:sticky;top:0;z-index:10">
@@ -857,11 +898,11 @@
 </div>
 <div id="bnav">
     <div class="nind" id="nind"></div>
-    <button class="bnt on" id="btn_welcome"><div class="bico">🏠</div><div class="blbl">خانه</div></button>
-    <button class="bnt" id="btn_study"><div class="bico">📖</div><div class="blbl">مطالعه</div></button>
-    <button class="bnt" id="btn_quiz"><div class="bico">☑</div><div class="blbl">آزمون</div></button>
-  <button class="bnt" id="btn_stats"><div class="bico">📊</div><div class="blbl">آمار</div></button>
-    <button class="bnt" id="btn_mycards" onclick="gotoTab('mycards')"><div class="bico">🗂️</div><div class="blbl">کارت‌های من</div></button>
+    <button class="bnt on" id="btn_welcome"><div class="bico"><svg class="app-icon" aria-hidden="true"><use href="#ico-home"></use></svg></div><div class="blbl">خانه</div></button>
+    <button class="bnt" id="btn_study"><div class="bico"><svg class="app-icon" aria-hidden="true"><use href="#ico-study"></use></svg></div><div class="blbl">مطالعه</div></button>
+    <button class="bnt" id="btn_quiz"><div class="bico"><svg class="app-icon" aria-hidden="true"><use href="#ico-quiz"></use></svg></div><div class="blbl">آزمون</div></button>
+  <button class="bnt" id="btn_stats"><div class="bico"><svg class="app-icon" aria-hidden="true"><use href="#ico-stats"></use></svg></div><div class="blbl">آمار</div></button>
+    <button class="bnt" id="btn_mycards" onclick="gotoTab('mycards')"><div class="bico"><svg class="app-icon" aria-hidden="true"><use href="#ico-deck"></use></svg></div><div class="blbl">کارت‌های من</div></button>
   </div>
 <script src="vocab.js"></script>
 <script src="storage.js"></script>
